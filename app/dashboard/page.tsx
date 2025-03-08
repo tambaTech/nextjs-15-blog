@@ -22,7 +22,7 @@ export default async function Dashboard() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  const posts = await getPosts(user.id);
+  const posts = await getPosts(user?.id);
 
   return (
     <div>
