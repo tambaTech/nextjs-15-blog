@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 async function getPosts(userId: string) {
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  const posts = await prisma.blogPost.findMany({
+  const data = await prisma.blogPost.findMany({
     where: {
       authorId: userId,
     },
@@ -15,14 +15,14 @@ async function getPosts(userId: string) {
     },
   });
 
-  return posts;
+  return data;
 }
 
 export default async function Dashboard() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  const posts = await getPosts(user?.id);
+  const data = await getPosts(user?.id);
 
   return (
     <div>
@@ -35,7 +35,7 @@ export default async function Dashboard() {
       </div>
 
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        {posts.map((item) => (
+        {data.map((item) => (
           <BlogPostCard data={item} key={item.id} />
         ))}
       </div>
