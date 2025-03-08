@@ -36,7 +36,7 @@ export default async function Dashboard() {
 
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
         {data.map((item) => (
-          <BlogPostCard data={item} key={item.id} />
+          <BlogPostCard data={item} key={item?.id} />
         ))}
       </div>
     </div>
