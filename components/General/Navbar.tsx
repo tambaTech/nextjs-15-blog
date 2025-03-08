@@ -6,7 +6,6 @@ import {
   LogoutLink,
 } from '@kinde-oss/kinde-auth-nextjs/components';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import { redirect } from 'next/navigation';
 
 export default async function Navbar() {
   const { getUser } = getKindeServerSession();
