@@ -1,6 +1,5 @@
 import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
-
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { BlogPostCard } from '@/components/General/BlogPostCard';
 import { prisma } from '@/lib/db';
